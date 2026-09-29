@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>رحلاتي PRO - تأجير السيارات</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div class="app-container">
+        <!-- Navigation Bar -->
+        <nav class="navbar">
+            <div class="logo">
+                <i class="fa-solid fa-plane-departure" style="color: var(--primary);"></i>
+                <span>رحلاتي</span> <span class="brand-tag">PRO</span>
+            </div>
+
+            <div class="nav-links">
+                <a href="index.html"><i class="fa-solid fa-plane"></i> الطيران</a>
+                <a href="hotel-details.html"><i class="fa-solid fa-hotel"></i> الفنادق</a>
+                <a href="car-rental.html" class="active"><i class="fa-solid fa-car"></i> تأجير السيارات</a>
+                <a href="dashboard.html"><i class="fa-solid fa-chart-line"></i> لوحة التحكم</a>
+            </div>
+
+            <div class="header-actions">
+                <button class="icon-btn" id="themeToggleBtn"><i class="fa-solid fa-sun" id="themeIcon"></i></button>
+                <button class="icon-btn mobile-only" id="mobileMenuBtn"><i class="fa-solid fa-bars"></i></button>
+            </div>
+        </nav>
+
+        <!-- Advanced Car Search Engine Form -->
+        <header class="card-box" style="margin-bottom: 30px;">
+            <h1 style="font-size: 1.8rem; font-weight: 800; margin-bottom: 8px;">
+                <i class="fa-solid fa-car-side" style="color: var(--primary);"></i> محرك بحث واستئجار السيارات
+            </h1>
+            <p style="color: var(--text-muted); font-size: 0.95rem;">اختر سيارتك المفضلة وأكمل رحلتك بكل حرية وأمان</p>
+
+            <form class="real-search-form grid-form">
+                <div class="form-group">
+                    <label><i class="fa-solid fa-location-dot"></i> موقع الاستلام</label>
+                    <select required>
+                        <option>مطار دبي الدولي (DXB)</option>
+                        <option>مطار الرياض الدولي (RUH)</option>
+                        <option>مطار جدة الدولي (JED)</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label><i class="fa-solid fa-calendar-plus"></i> تاريخ ووقت الاستلام</label>
+                    <input type="datetime-local" required value="2026-10-10T10:00">
+                </div>
+
+                <div class="form-group">
+                    <label><i class="fa-solid fa-calendar-minus"></i> تاريخ ووقت التسليم</label>
+                    <input type="datetime-local" required value="2026-10-15T10:00">
+                </div>
+
+                <div class="form-group">
+                    <label><i class="fa-solid fa-id-card"></i> عمر السائق</label>
+                    <select>
+                        <option>25 سنة وأكبر (القياسي)</option>
+                        <option>21 - 24 سنة</option>
+                    </select>
+                </div>
+
+                <div class="form-group" style="display: flex; align-items: flex-end;">
+                    <button type="submit" class="action-btn primary" style="width: 100%; height: 48px;">
+                        <i class="fa-solid fa-magnifying-glass"></i> بحث عن سيارة
+                    </button>
+                </div>
+            </form>
+        </header>
+
+        <div class="content-layout">
+            <!-- Filter Sidebar -->
+            <aside class="card-box filter-sidebar">
+                <h3 style="margin-bottom: 20px; font-size: 1.2rem;"><i class="fa-solid fa-sliders"></i> تصفية السيارات</h3>
+
+                <div class="filter-group">
+                    <h4>فئة السيارة</h4>
+                    <label><input type="checkbox" checked> اقتصادية (Sedan)</label>
+                    <label><input type="checkbox" checked> عائلية ورائعة (SUV)</label>
+                    <label><input type="checkbox" checked> فاخرة (Luxury)</label>
+                </div>
+
+                <div class="filter-group">
+                    <h4>ناقل الحركة (الجير)</h4>
+                    <label><input type="checkbox" checked> أوتوماتيك</label>
+                    <label><input type="checkbox"> يدوي (Manual)</label>
+                </div>
+
+                <div class="filter-group">
+                    <h4>الشركة الموردة</h4>
+                    <label><input type="checkbox" checked> Hertz</label>
+                    <label><input type="checkbox" checked> Sixt</label>
+                    <label><input type="checkbox" checked> Enterprise</label>
+                </div>
+            </aside>
+
+            <!-- Car List -->
+            <main>
+                <!-- Car Card 1 -->
+                <div class="result-card">
+                    <div>
+                        <div style="display: flex; gap: 10px; align-items: center; margin-bottom: 10px;">
+                            <span style="background: var(--primary-light); color: var(--primary); padding: 3px 10px; border-radius: 6px; font-weight: 700; font-size: 0.85rem;">اقتصادية</span>
+                            <span style="color: var(--success); font-weight: 700; font-size: 0.85rem;"><i class="fa-solid fa-shield-halved"></i> تأمين شامل مجاناً</span>
+                        </div>
+                        <h2>تويوتا كامري 2026 أو ما يماثلها</h2>
+                        <p class="pickup-loc" style="color: var(--text-muted); margin-top: 5px;">
+                            المورد: <strong>Sixt Rent a Car</strong> | موقع الاستلام: مطار دبي - مبنى 3
+                        </p>
+                        <div style="margin-top: 12px; display: flex; gap: 15px; color: var(--text-muted); font-size: 0.85rem; flex-wrap: wrap;">
+                            <span><i class="fa-solid fa-user" style="color: var(--primary);"></i> 5 مقاعد</span>
+                            <span><i class="fa-solid fa-suitcase" style="color: var(--primary);"></i> 2 حقائب</span>
+                            <span><i class="fa-solid fa-gears" style="color: var(--primary);"></i> أوتوماتيك</span>
+                            <span><i class="fa-solid fa-gas-pump" style="color: var(--primary);"></i> بنزين</span>
+                        </div>
+                    </div>
+                    <div class="price-box">
+                        <div class="price">180 ر.س</div>
+                        <small style="color: var(--text-muted); display: block; margin-bottom: 10px;">لكل يوم (Total: 900 ر.س)</small>
+                        <button class="action-btn primary real-book-btn">
+                            استأجر الآن <i class="fa-solid fa-arrow-left"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Car Card 2 -->
+                <div class="result-card">
+                    <div>
+                        <div style="display: flex; gap: 10px; align-items: center; margin-bottom: 10px;">
+                            <span style="background: rgba(245, 158, 11, 0.15); color: var(--accent); padding: 3px 10px; border-radius: 6px; font-weight: 700; font-size: 0.85rem;">SUV عائلية</span>
+                        </div>
+                        <h2>هيونداي توسان 2026</h2>
+                        <p class="pickup-loc" style="color: var(--text-muted); margin-top: 5px;">
+                            المورد: <strong>Hertz</strong> | موقع الاستلام: مطار الرياض الدولي
+                        </p>
+                        <div style="margin-top: 12px; display: flex; gap: 15px; color: var(--text-muted); font-size: 0.85rem; flex-wrap: wrap;">
+                            <span><i class="fa-solid fa-user" style="color: var(--primary);"></i> 5 مقاعد</span>
+                            <span><i class="fa-solid fa-suitcase" style="color: var(--primary);"></i> 4 حقائب</span>
+                            <span><i class="fa-solid fa-gears" style="color: var(--primary);"></i> أوتوماتيك</span>
+                            <span><i class="fa-solid fa-snowflake" style="color: var(--primary);"></i> تكييف ممتاز</span>
+                        </div>
+                    </div>
+                    <div class="price-box">
+                        <div class="price">290 ر.س</div>
+                        <small style="color: var(--text-muted); display: block; margin-bottom: 10px;">لكل يوم</small>
+                        <button class="action-btn primary real-book-btn">
+                            استأجر الآن <i class="fa-solid fa-arrow-left"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Car Card 3 -->
+                <div class="result-card">
+                    <div>
+                        <div style="display: flex; gap: 10px; align-items: center; margin-bottom: 10px;">
+                            <span style="background: rgba(239, 68, 68, 0.15); color: var(--danger); padding: 3px 10px; border-radius: 6px; font-weight: 700; font-size: 0.85rem;">فاخرة VIP</span>
+                        </div>
+                        <h2>مرسيدس E-Class 2026</h2>
+                        <p class="pickup-loc" style="color: var(--text-muted); margin-top: 5px;">
+                            المورد: <strong>Enterprise Luxury</strong> | موقع الاستلام: مطار دبي
+                        </p>
+                        <div style="margin-top: 12px; display: flex; gap: 15px; color: var(--text-muted); font-size: 0.85rem; flex-wrap: wrap;">
+                            <span><i class="fa-solid fa-user" style="color: var(--primary);"></i> 5 مقاعد</span>
+                            <span><i class="fa-solid fa-suitcase" style="color: var(--primary);"></i> 3 حقائب</span>
+                            <span><i class="fa-solid fa-gears" style="color: var(--primary);"></i> أوتوماتيك</span>
+                        </div>
+                    </div>
+                    <div class="price-box">
+                        <div class="price">750 ر.س</div>
+                        <small style="color: var(--text-muted); display: block; margin-bottom: 10px;">لكل يوم</small>
+                        <button class="action-btn primary real-book-btn">
+                            استأجر الآن <i class="fa-solid fa-arrow-left"></i>
+                        </button>
+                    </div>
+                </div>
+
+            </main>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

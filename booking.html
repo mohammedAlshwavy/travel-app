@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>رحلاتي PRO - إتمام الحجز والدفع</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div class="app-container">
+        <!-- Navigation Bar -->
+        <nav class="navbar">
+            <div class="logo">
+                <i class="fa-solid fa-plane-departure" style="color: var(--primary);"></i>
+                <span>رحلاتي</span> <span class="brand-tag">PRO</span>
+            </div>
+
+            <div class="nav-links">
+                <a href="index.html"><i class="fa-solid fa-plane"></i> الطيران</a>
+                <a href="hotel-details.html"><i class="fa-solid fa-hotel"></i> الفنادق</a>
+                <a href="car-rental.html"><i class="fa-solid fa-car"></i> تأجير السيارات</a>
+                <a href="dashboard.html"><i class="fa-solid fa-chart-line"></i> لوحة التحكم</a>
+            </div>
+
+            <div class="header-actions">
+                <button class="icon-btn" id="themeToggleBtn"><i class="fa-solid fa-sun" id="themeIcon"></i></button>
+            </div>
+        </nav>
+
+        <div style="max-width: 800px; margin: 0 auto;">
+            <h1 style="margin-bottom: 20px; font-size: 1.8rem;">
+                <i class="fa-solid fa-credit-card" style="color: var(--primary);"></i> تأكيد البيانات وإتمام الدفع
+            </h1>
+
+            <!-- Selected Summary Box -->
+            <div class="card-box" id="checkout-summary" style="margin-bottom: 25px; border-right: 4px solid var(--primary);">
+                <!-- Dynamic Content Powered by main.js -->
+            </div>
+
+            <!-- Payment Form -->
+            <form id="checkout-form" class="card-box">
+                <h3 style="margin-bottom: 15px; border-bottom: 1px solid var(--border-color); padding-bottom: 10px;">
+                    <i class="fa-solid fa-user-check"></i> بيانات المسافر الرئيسي
+                </h3>
+
+                <div class="grid-form" style="margin-top:0; margin-bottom:25px;">
+                    <div class="form-group">
+                        <label>الاسم الأول</label>
+                        <input type="text" placeholder="مثال: محمد" required>
+                    </div>
+                    <div class="form-group">
+                        <label>اسم العائلة</label>
+                        <input type="text" placeholder="مثال: العتيبي" required>
+                    </div>
+                    <div class="form-group">
+                        <label>البريد الإلكتروني</label>
+                        <input type="email" placeholder="name@domain.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label>رقم الجوال</label>
+                        <input type="tel" placeholder="+966 50 000 0000" required>
+                    </div>
+                </div>
+
+                <h3 style="margin-bottom: 15px; border-bottom: 1px solid var(--border-color); padding-bottom: 10px;">
+                    <i class="fa-solid fa-lock"></i> تفاصيل البطاقة الائتمانية (محاكاة آمنة)
+                </h3>
+
+                <div class="grid-form" style="margin-top:0;">
+                    <div class="form-group" style="grid-column: span 2;">
+                        <label>رقم البطاقة</label>
+                        <input type="text" placeholder="4000 0000 0000 0000" maxlength="19" required>
+                    </div>
+                    <div class="form-group">
+                        <label>تاريخ الانتهاء</label>
+                        <input type="text" placeholder="MM/YY" maxlength="5" required>
+                    </div>
+                    <div class="form-group">
+                        <label>الرمز (CVC)</label>
+                        <input type="password" placeholder="123" maxlength="3" required>
+                    </div>
+                </div>
+
+                <button type="submit" class="action-btn primary" style="width: 100%; padding: 15px; margin-top: 25px; font-size: 1.1rem;">
+                    <i class="fa-solid fa-check-circle"></i> تأكيد ودفع الحجز الآن
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

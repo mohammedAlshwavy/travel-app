@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>رحلاتي PRO - الرئيسية وحجز الطيران</title>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <div class="app-container">
+        <!-- Navigation Bar -->
+        <nav class="navbar">
+            <div class="logo">
+                <i class="fa-solid fa-plane-departure" style="color: var(--primary);"></i>
+                <span>رحلاتي</span> <span class="brand-tag">PRO</span>
+            </div>
+
+            <div class="nav-links">
+                <a href="index.html" class="active"><i class="fa-solid fa-plane"></i> الطيران</a>
+                <a href="hotel-details.html"><i class="fa-solid fa-hotel"></i> الفنادق</a>
+                <a href="car-rental.html"><i class="fa-solid fa-car"></i> تأجير السيارات</a>
+                <a href="dashboard.html"><i class="fa-solid fa-chart-line"></i> لوحة التحكم</a>
+            </div>
+
+            <div class="header-actions">
+                <button class="icon-btn" id="themeToggleBtn" title="تبديل الثيم">
+                    <i class="fa-solid fa-sun" id="themeIcon"></i>
+                </button>
+                <button class="icon-btn mobile-only" id="mobileMenuBtn" title="القائمة">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </nav>
+
+        <!-- Search Flight Form Header -->
+        <header class="card-box"
+            style="margin-bottom: 30px; background: linear-gradient(135deg, var(--bg-surface), rgba(37, 99, 235, 0.08));">
+            <h1 style="font-size: 1.8rem; font-weight: 800; margin-bottom: 8px;">
+                <i class="fa-solid fa-paper-plane" style="color: var(--primary);"></i> ابحث عن أفضل رحلات الطيران
+            </h1>
+            <p style="color: var(--text-muted); font-size: 0.95rem;">وجهات عالمية بأفضل الأسعار وبضغطة زر واحدة</p>
+
+            <form class="real-search-form grid-form">
+                <div class="form-group">
+                    <label><i class="fa-solid fa-plane-departure"></i> مغادرة من</label>
+                    <select required>
+                        <option value="RUH">الرياض (RUH)</option>
+                        <option value="JED">جدة (JED)</option>
+
+                        <option value="DMM">الدمام (DMM)</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label><i class="fa-solid fa-plane-arrival"></i> وصول إلى</label>
+                    <select required>
+                        <option value="DXB">دبي (DXB)</option>
+                        <option value="CAI">القاهرة (CAI)</option>
+                        <option value="IST">إسطنبول (IST)</option>
+                        <option value="LHR">لندن (LHR)</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label><i class="fa-solid fa-calendar-days"></i> تاريخ الذهاب</label>
+                    <input type="date" required value="2026-10-10">
+                </div>
+
+                <div class="form-group">
+                    <label><i class="fa-solid fa-calendar-check"></i> تاريخ العودة</label>
+                    <input type="date" value="2026-10-20">
+                </div>
+
+                <div class="form-group">
+                    <label><i class="fa-solid fa-chair"></i> الدرجة</label>
+                    <select>
+                        <option value="eco">السياحية</option>
+                        <option value="bus">الأعمال</option>
+                        <option value="first">الأولى</option>
+                    </select>
+                </div>
+
+                <div class="form-group" style="display: flex; align-items: flex-end;">
+                    <button type="submit" class="action-btn primary" style="width: 100%; height: 48px;">
+                        <i class="fa-solid fa-magnifying-glass"></i> بحث فورى
+                    </button>
+                </div>
+            </form>
+        </header>
+
+        <!-- Main Content Layout (Sidebar + Results) -->
+        <div class="content-layout">
+            <!-- Filter Sidebar -->
+            <aside class="card-box filter-sidebar">
+                <h3
+                    style="margin-bottom: 20px; font-size: 1.2rem; display: flex; align-items: center; justify-content: space-between;">
+                    <span><i class="fa-solid fa-sliders"></i> الفلترة الفورية</span>
+                    <small style="font-size: 0.75rem; color: var(--primary);">تحديث تلقائي</small>
+                </h3>
+
+                <div class="filter-group">
+                    <h4>عدد محطات التوقف</h4>
+                    <label><input type="checkbox" checked> مباشر (بدون توقف)</label>
+                    <label><input type="checkbox" checked> ترانزيت (محطة واحدة)</label>
+                </div>
+
+                <div class="filter-group">
+                    <h4>شركات الطيران</h4>
+                    <label><input type="checkbox" checked> الخطوط السعودية</label>
+                    <label><input type="checkbox" checked> طيران الإمارات</label>
+                    <label><input type="checkbox" checked> طيران أديل</label>
+                    <label><input type="checkbox" checked> الخطوط القطريّة</label>
+                </div>
+
+                <div class="filter-group">
+                    <h4>الترتيب حسب</h4>
+                    <select
+                        style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid var(--border-color); background: var(--bg-body); color: var(--text-main);">
+                        <option value="price-asc">الأقل سعراً أولاً</option>
+                        <option value="rating-desc">الأعلى تقييماً</option>
+                        <option value="duration-asc">الأقصر مدة</option>
+                    </select>
+                </div>
+            </aside>
+
+            <!-- Results Section -->
+            <main>
+                <!-- Flight Card 1 -->
+                <div class="result-card">
+                    <div>
+                        <div style="display: flex; gap: 10px; align-items: center; margin-bottom: 10px;">
+                            <span
+                                style="background: var(--primary-light); color: var(--primary); padding: 4px 12px; border-radius: 20px; font-weight: 700; font-size: 0.85rem;">مباشر</span>
+                            <span style="color: var(--accent); font-weight: 700; font-size: 0.9rem;"><i
+                                    class="fa-solid fa-star"></i> 4.9 (1,240 تقييم)</span>
+                        </div>
+                        <h2>الخطوط الجوية السعودية</h2>
+                        <p class="flight-type" style="color: var(--text-muted); margin-top: 5px;">
+                            <i class="fa-solid fa-plane-departure"></i> الرياض (RUH) ➔ دبي (DXB) | المدة: 2 ساعة
+                        </p>
+                        <small style="color: var(--success); font-weight: 600; display: block; margin-top: 8px;">
+                            <i class="fa-solid fa-suitcase"></i> شامل 30 كجم أمتعة + وجبة مجانية
+                        </small>
+                    </div>
+                    <div class="price-box">
+                        <div class="price">650 ر.س</div>
+                        <small style="color: var(--text-muted); display: block; margin-bottom: 10px;">شامل الضريبة
+                            والرسوم</small>
+                        <button class="action-btn primary real-book-btn">
+                            احجز الآن <i class="fa-solid fa-arrow-left"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Flight Card 2 -->
+                <div class="result-card">
+                    <div>
+                        <div style="display: flex; gap: 10px; align-items: center; margin-bottom: 10px;">
+                            <span
+                                style="background: var(--primary-light); color: var(--primary); padding: 4px 12px; border-radius: 20px; font-weight: 700; font-size: 0.85rem;">ترانزيت
+                                (1 محطة)</span>
+                            <span style="color: var(--accent); font-weight: 700; font-size: 0.9rem;"><i
+                                    class="fa-solid fa-star"></i> 4.8 (890 تقييم)</span>
+                        </div>
+                        <h2>طيران الإمارات</h2>
+                        <p class="flight-type" style="color: var(--text-muted); margin-top: 5px;">
+                            <i class="fa-solid fa-plane-departure"></i> جدة (JED) ➔ لندن (LHR) | المدة: 7 ساعات
+                        </p>
+                        <small style="color: var(--success); font-weight: 600; display: block; margin-top: 8px;">
+                            <i class="fa-solid fa-wifi"></i> واي فاي مجاني على متن الطائرة
+                        </small>
+                    </div>
+                    <div class="price-box">
+                        <div class="price">1,850 ر.س</div>
+                        <small style="color: var(--text-muted); display: block; margin-bottom: 10px;">شامل الضريبة
+                            والرسوم</small>
+                        <button class="action-btn primary real-book-btn">
+                            احجز الآن <i class="fa-solid fa-arrow-left"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Flight Card 3 -->
+                <div class="result-card">
+                    <div>
+                        <div style="display: flex; gap: 10px; align-items: center; margin-bottom: 10px;">
+                            <span
+                                style="background: var(--primary-light); color: var(--primary); padding: 4px 12px; border-radius: 20px; font-weight: 700; font-size: 0.85rem;">مباشر</span>
+                            <span style="color: var(--accent); font-weight: 700; font-size: 0.9rem;"><i
+                                    class="fa-solid fa-star"></i> 4.6 (430 تقييم)</span>
+                        </div>
+                        <h2>طيران أديل</h2>
+                        <p class="flight-type" style="color: var(--text-muted); margin-top: 5px;">
+                            <i class="fa-solid fa-plane-departure"></i> الرياض (RUH) ➔ القاهرة (CAI) | المدة: 2.5 ساعة
+                        </p>
+                        <small style="color: var(--text-muted); font-weight: 600; display: block; margin-top: 8px;">
+                            <i class="fa-solid fa-bag-shopping"></i> حقيبة ظهر 7 كجم مجاناً
+                        </small>
+                    </div>
+                    <div class="price-box">
+                        <div class="price">420 ر.س</div>
+                        <small style="color: var(--text-muted); display: block; margin-bottom: 10px;">اقتصادي
+                            ممتاز</small>
+                        <button class="action-btn primary real-book-btn">
+                            احجز الآن <i class="fa-solid fa-arrow-left"></i>
+                        </button>
+                    </div>
+                </div>
+
+            </main>
+        </div>
+    </div>
+
+    <!-- Main JS File -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>

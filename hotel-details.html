@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>رحلاتي PRO - الفنادق والإقامة</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div class="app-container">
+        <!-- Navigation Bar -->
+        <nav class="navbar">
+            <div class="logo">
+                <i class="fa-solid fa-plane-departure" style="color: var(--primary);"></i>
+                <span>رحلاتي</span> <span class="brand-tag">PRO</span>
+            </div>
+
+            <div class="nav-links">
+                <a href="index.html"><i class="fa-solid fa-plane"></i> الطيران</a>
+                <a href="hotel-details.html" class="active"><i class="fa-solid fa-hotel"></i> الفنادق</a>
+                <a href="car-rental.html"><i class="fa-solid fa-car"></i> تأجير السيارات</a>
+                <a href="dashboard.html"><i class="fa-solid fa-chart-line"></i> لوحة التحكم</a>
+            </div>
+
+            <div class="header-actions">
+                <button class="icon-btn" id="themeToggleBtn"><i class="fa-solid fa-sun" id="themeIcon"></i></button>
+                <button class="icon-btn mobile-only" id="mobileMenuBtn"><i class="fa-solid fa-bars"></i></button>
+            </div>
+        </nav>
+
+        <!-- Search Hotel Form Header -->
+        <header class="card-box" style="margin-bottom: 30px;">
+            <h1 style="font-size: 1.8rem; font-weight: 800; margin-bottom: 8px;">
+                <i class="fa-solid fa-hotel" style="color: var(--primary);"></i> استكشف الفنادق والغرف المتاحة
+            </h1>
+            <p style="color: var(--text-muted); font-size: 0.95rem;">إقامات فاخرة، إطلالات ساحرة، وإلغاء مجاني لمعظم الغرف</p>
+
+            <form class="real-search-form grid-form">
+                <div class="form-group">
+                    <label><i class="fa-solid fa-location-dot"></i> المدينة أو الفندق</label>
+                    <input type="text" value="دبي، الإمارات العربية المتحدة" required>
+                </div>
+
+                <div class="form-group">
+                    <label><i class="fa-solid fa-calendar-check"></i> تاريخ الوصول</label>
+                    <input type="date" required value="2026-10-12">
+                </div>
+
+                <div class="form-group">
+                    <label><i class="fa-solid fa-calendar-xmark"></i> تاريخ المغادرة</label>
+                    <input type="date" required value="2026-10-16">
+                </div>
+
+                <div class="form-group">
+                    <label><i class="fa-solid fa-user-group"></i> النزلاء والغرَف</label>
+                    <select>
+                        <option>1 غرفة، 2 بالغين</option>
+                        <option>1 غرفة، 1 بالغ</option>
+                        <option>2 غرفة، 4 بالغين</option>
+                    </select>
+                </div>
+
+                <div class="form-group" style="display: flex; align-items: flex-end;">
+                    <button type="submit" class="action-btn primary" style="width: 100%; height: 48px;">
+                        <i class="fa-solid fa-magnifying-glass"></i> تحديث البحث
+                    </button>
+                </div>
+            </form>
+        </header>
+
+        <div class="content-layout">
+            <!-- Filter Sidebar -->
+            <aside class="card-box filter-sidebar">
+                <h3 style="margin-bottom: 20px; font-size: 1.2rem;"><i class="fa-solid fa-filter"></i> تصفية الفنادق</h3>
+
+                <div class="filter-group">
+                    <h4>تصنيف النجوم</h4>
+                    <label><input type="checkbox" checked> 5 نجوم فاخر ⭐⭐⭐⭐⭐</label>
+                    <label><input type="checkbox" checked> 4 نجوم ممتاز ⭐⭐⭐⭐</label>
+                    <label><input type="checkbox"> 3 نجوم اقتصادي ⭐⭐⭐</label>
+                </div>
+
+                <div class="filter-group">
+                    <h4>المميزات والخدمات</h4>
+                    <label><input type="checkbox" checked> إفطار مجاني شامل</label>
+                    <label><input type="checkbox" checked> مسبح ومركز لياقة</label>
+                    <label><input type="checkbox" checked> إلغاء مجاني</label>
+                    <label><input type="checkbox"> خدمة توصيل للمطار</label>
+                </div>
+
+                <div class="filter-group">
+                    <h4>الترتيب</h4>
+                    <select style="width:100%; padding:10px; border-radius:8px; border:1px solid var(--border-color); background:var(--bg-body); color:var(--text-main);">
+                        <option>الأعلى تقييماً</option>
+                        <option>السعر: من الأقل للأعلى</option>
+                        <option>السعر: من الأعلى للأقل</option>
+                    </select>
+                </div>
+            </aside>
+
+            <!-- Hotel List -->
+            <main>
+                <!-- Hotel Card 1 -->
+                <div class="result-card">
+                    <div>
+                        <div style="display: flex; gap: 10px; align-items: center; margin-bottom: 10px;">
+                            <span style="color: var(--accent); font-weight: 800;"><i class="fa-solid fa-star"></i> 5 نجوم</span>
+                            <span style="background: rgba(16, 185, 129, 0.15); color: var(--success); padding: 3px 10px; border-radius: 6px; font-weight: 700; font-size: 0.8rem;">إلغاء مجاني</span>
+                        </div>
+                        <h2>فندق برج العرب - جناح ملكي</h2>
+                        <p class="room-spec" style="color: var(--text-muted); margin-top: 5px;">
+                            <i class="fa-solid fa-bed"></i> جناح مطل على البحر + إفطار عالمي فاخر + جاكوزي خاص
+                        </p>
+                        <div style="margin-top: 10px; display: flex; gap: 15px; color: var(--text-muted); font-size: 0.85rem;">
+                            <span><i class="fa-solid fa-wifi" style="color: var(--primary);"></i> واي فاي مجاني</span>
+                            <span><i class="fa-solid fa-water-ladder" style="color: var(--primary);"></i> مسبح خاص</span>
+                        </div>
+                    </div>
+                    <div class="price-box">
+                        <div class="price">3,200 ر.س</div>
+                        <small style="color: var(--text-muted); display: block; margin-bottom: 10px;">لكل ليلة (شامل الضرائب)</small>
+                        <button class="action-btn primary real-book-btn">
+                            احجز الغرفة <i class="fa-solid fa-arrow-left"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Hotel Card 2 -->
+                <div class="result-card">
+                    <div>
+                        <div style="display: flex; gap: 10px; align-items: center; margin-bottom: 10px;">
+                            <span style="color: var(--accent); font-weight: 800;"><i class="fa-solid fa-star"></i> 4 نجوم</span>
+                            <span style="background: var(--primary-light); color: var(--primary); padding: 3px 10px; border-radius: 6px; font-weight: 700; font-size: 0.8rem;">الأكثر مبيعاً</span>
+                        </div>
+                        <h2>منتجع النخيل والسبا</h2>
+                        <p class="room-spec" style="color: var(--text-muted); margin-top: 5px;">
+                            <i class="fa-solid fa-bed"></i> غرفة ديلوكس مزدوجة مع إطلالة على الحديقة
+                        </p>
+                        <div style="margin-top: 10px; display: flex; gap: 15px; color: var(--text-muted); font-size: 0.85rem;">
+                            <span><i class="fa-solid fa-utensils" style="color: var(--primary);"></i> بوفيه مفتوح</span>
+                            <span><i class="fa-solid fa-square-parking" style="color: var(--primary);"></i> موقف مجاني</span>
+                        </div>
+                    </div>
+                    <div class="price-box">
+                        <div class="price">850 ر.س</div>
+                        <small style="color: var(--text-muted); display: block; margin-bottom: 10px;">لكل ليلة</small>
+                        <button class="action-btn primary real-book-btn">
+                            احجز الغرفة <i class="fa-solid fa-arrow-left"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Hotel Card 3 -->
+                <div class="result-card">
+                    <div>
+                        <div style="display: flex; gap: 10px; align-items: center; margin-bottom: 10px;">
+                            <span style="color: var(--accent); font-weight: 800;"><i class="fa-solid fa-star"></i> 5 نجوم</span>
+                        </div>
+                        <h2>فندق جرافيتي سنتر</h2>
+                        <p class="room-spec" style="color: var(--text-muted); margin-top: 5px;">
+                            <i class="fa-solid fa-bed"></i> غرفتان متصلتان للعائلات - وسط المدينة
+                        </p>
+                        <div style="margin-top: 10px; display: flex; gap: 15px; color: var(--text-muted); font-size: 0.85rem;">
+                            <span><i class="fa-solid fa-dumbbell" style="color: var(--primary);"></i> نادي رياضي</span>
+                            <span><i class="fa-solid fa-bell" style="color: var(--primary);"></i> خدمة 24 ساعة</span>
+                        </div>
+                    </div>
+                    <div class="price-box">
+                        <div class="price">1,100 ر.س</div>
+                        <small style="color: var(--text-muted); display: block; margin-bottom: 10px;">لكل ليلة</small>
+                        <button class="action-btn primary real-book-btn">
+                            احجز الغرفة <i class="fa-solid fa-arrow-left"></i>
+                        </button>
+                    </div>
+                </div>
+
+            </main>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
